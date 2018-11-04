@@ -1,8 +1,11 @@
+// baseado em:
+// https://github.com/udacity/reactnd-contacts-server
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const config = require('./config')
-const contacts = require('./contacts')
+const marcadores = require('./marcadores')
 
 const app = express()
 
@@ -12,7 +15,7 @@ app.use(cors())
 app.get('/', (req, res) => {
   const help = `
   <pre>
-    Welcome to the Address Book API!
+    Bem-vindo a API do Mapa do Bairro!
 
     Use an Authorization header to work with your own data:
 
@@ -20,9 +23,9 @@ app.get('/', (req, res) => {
 
     The following endpoints are available:
 
-    GET /contacts
-    DELETE /contacts/:id
-    POST /contacts { name, email, avatarURL }
+    GET /marcadores
+    DELETE /marcadores/:id
+    POST /marcadores { id, nome, endereco, lat, lng, img }
   </pre>
   `
 
@@ -37,27 +40,27 @@ app.use((req, res, next) => {
     next()
   } else {
     res.status(403).send({
-      error: 'Please provide an Authorization header to identify yourself (can be whatever you want)'
+      error: 'Favor providenciar Authorization no header para se identificar'
     })
   }
 })
 
-app.get('/contacts', (req, res) => {
-  res.send(contacts.get(req.token))
+app.get('/marcadores', (req, res) => {
+  res.send(marcadores.get(req.token))
 })
 
-app.delete('/contacts/:id', (req, res) => {
-  res.send(contacts.remove(req.token, req.params.id))
+app.delete('/marcadores/:id', (req, res) => {
+  res.send(marcadores.remove(req.token, req.params.id))
 })
 
-app.post('/contacts', bodyParser.json(), (req, res) => {
-  const { name, email } = req.body
+app.post('/marcadores', bodyParser.json(), (req, res) => {
+  const { id, nome, endereco, lat, lng, img } = req.body
 
-  if (name && email) {
-    res.send(contacts.add(req.token, req.body))
+  if (id && nome && endereco && lat && lng && img) {
+    res.send(marcadores.add(req.token, req.body))
   } else {
     res.status(403).send({
-      error: 'Please provide both a name and an email address'
+      error: 'Verifique os dados enviados'
     })
   }
 })

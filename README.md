@@ -1,18 +1,10 @@
-# Server for Contacts Project
+# Servidor para o Mapa do bairro
+Este é o servidor para o projeto [Mapa do bairro](https://github.com/giordanna/mapa-bairro).
 
-This is a backend server for the Contacts app in-class project. This project is part of [Udacity's React Nanodegree program](https://www.udacity.com/course/react-nanodegree--nd019).
+## Executando o servidor
+- Baixe ou clone o repositório usando `git clone https://github.com/giordanna/mapa-servidor.git`;
+- Dentro do diretório, instale as dependências usando `npm install`;
+- Agora inicie o servidor com `node server.js`.
 
-You'll build the front end of the Contacts app throughout the course. Because the course is on React and doesn't cover Node or servers, we've built this server and an API to interact with it so can focus on building the front end portion of the project in React.
-
-## Getting Set Up
-
-Getting the server running on your local machine takes only a few steps:
-
-1. clone the project - `git clone https://github.com/udacity/reactnd-contacts-server.git`
-2. `cd reactnd-contacts-server`
-3. install its dependencies - `npm install`
-4. start the server - `node server.js`
-
-## Contributing
-
-We love receiving pull requests! For specifics on how to contribute to this project, check out the [contributing file](CONTRIBUTING.md).
+## Dúvidas
+ - Caso há alguma dúvida em relação a este repositório, envie para gior.grs@gmail.com
