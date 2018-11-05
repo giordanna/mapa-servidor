@@ -1,5 +1,5 @@
 # Servidor para o Mapa do bairro
-Este é o servidor para o projeto [Mapa do bairro](https://github.com/giordanna/mapa-bairro).
+Este é o servidor para o projeto [Mapa do bairro (old)](https://github.com/giordanna/mapa-bairro/tree/old).
 
 ## Executando o servidor
 - Baixe ou clone o repositório usando `git clone https://github.com/giordanna/mapa-servidor.git`;
